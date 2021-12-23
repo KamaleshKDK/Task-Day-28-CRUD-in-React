@@ -1,8 +1,9 @@
 import React from 'react'
 import { useFormik } from 'formik';
+import { useNavigate } from 'react-router-dom';
 
 function Productform() {
-
+ let navigate = useNavigate()
     const formik = useFormik({
         initialValues: {
             name: '',
@@ -22,7 +23,7 @@ function Productform() {
                         "Content-type": "application/json"
                     }
                 })
-                alert("Your Product is Saved")
+               navigate('/user')
                 
             } catch (error) {
                 console.log(error)
